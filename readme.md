@@ -1,1 +1,1 @@
-github profiles.
+github profiles
