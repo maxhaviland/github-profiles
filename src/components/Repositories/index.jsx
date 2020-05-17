@@ -7,13 +7,13 @@ import { Link } from './styles';
 function Repositories({ repositories }) {
   const repositoryList = repositories.map((repository, index) => {
     return index < 4 && (
-      <Link href={repository.url} target='blank'>
-        <ListItem
-          key={repository.id}
-          outlined
-          margin="0 0 10px 0"
-          color=''
-        >
+      <ListItem
+        key={index}
+        outlined
+        margin="0 0 10px 0"
+        color=''
+      >
+        <Link href={repository.url} target='blank'>
           {repository.name}
           <ListSubItem >
             <section>
@@ -27,8 +27,8 @@ function Repositories({ repositories }) {
               </span>
             </section>
           </ListSubItem>
-        </ListItem>
-      </Link>
+        </Link>
+      </ListItem>
     )
   })
   return (
