@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const List = styled.ol`
-  display: ${({display}) => display || ''};
+  display: ${({ display }) => display || ''};
   text-align: start;
   padding: 0;
   margin: 0;
@@ -10,14 +10,14 @@ export const List = styled.ol`
 
 export const ListItem = styled.li`
   list-style: none;
-  box-shadow: ${({outlined}) => outlined && '0px 0px 4px 0px rgba(212,212,212,1)' || ''};
+  box-shadow: ${({ outlined }) => outlined && '0px 0px 4px 0px rgba(212,212,212,1)' || ''};
   border-radius: 2px;
-  margin: ${({margin}) => margin || '0'};
-  padding: ${({padding}) => padding || '1rem'};
+  margin: ${({ margin }) => margin || '0'};
+  padding: ${({ padding }) => padding || '1rem'};
   word-wrap: break-word;
   text-align: justify;
-  background-color: ${({color}) => color || ''};
-  height: ${({height}) => height };
+  background-color: ${({ color }) => color || ''};
+  height: ${({ height }) => height};
   white-space: nowrap;
   text-overflow: ellipsis;
   direction: ltr;
@@ -36,9 +36,9 @@ export const ListItem = styled.li`
 `;
 
 export const ListSubItem = styled.section`
-  border-top: ${({outlined}) => outlined && 'solid 1px #e6e3e3;' || '' };
-  margin: ${({margin}) => margin || '4px 0 0 0'};
-  display: ${({display}) => display || '' };
+  border-top: ${({ outlined }) => outlined && 'solid 1px #e6e3e3;' || ''};
+  margin: ${({ margin }) => margin || '4px 0 0 0'};
+  display: ${({ display }) => display || ''};
   white-space: nowrap;
   text-overflow: ellipsis;
   direction: ltr;
