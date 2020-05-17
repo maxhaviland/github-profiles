@@ -1,14 +1,22 @@
 import { api } from '../api';
 
-async function fetchUser(username) {
+export async function fetchUser(username) {
   const url = api.url + username;
-  const { id, avatar_url, login } = await fetch(url).then(response => response.json());
-  const user = {
-    id: id,
-    avatar: avatar_url,
-    username: login
-  };
-  return user;
-}
+  let status = 0;
 
-export { fetchUser }; 
+  const response = await fetch(url).then(res => {
+    status = res.status;
+    return res.json();
+  });
+
+  const user = {
+    id: response.id,
+    avatar: response.avatar_url,
+    username: response.login,
+    url: response.html_url,
+    followers: response.followers,
+    repos: response.public_repos,
+  };
+
+  return { user, status };
+}

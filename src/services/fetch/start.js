@@ -1,17 +1,10 @@
-import { fetchUser } from './user';
 import { fetchRepositories } from './repositories';
-import { fetchFollowers } from './followers';
+import { fetchUser } from './user';
 
-async function start(username) {
-  const user = await fetchUser(username, {mode: 'no-cors'});
-  const followers = await fetchFollowers(username);
-  const repositories = await fetchRepositories(username);
+export async function start(username) {
+  const user = await fetchUser(username);
+  const repositories = user.status === 200 && await fetchRepositories(username) || {};
 
-  return {
-    ...user,
-    followers,
-    repositories
-  }
+  return { ...user, repositories }
 };
 
-export { start }
