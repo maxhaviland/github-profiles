@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { start } from './services/fetch/start'
+import React from 'react';
+import Footer from './components/Footer';
+import Search from './components/Search';
+import ProfileContainer from './containers/ProfileContainer';
 
 function App() {
-  const [user, setUser] = useState({
-    id: 0
-  })
-  const [username, setUsername] = useState('diego3g')
-
-  const startUserProfile = async () => {
-    const userProfile = await start(username)
-    //setUser(userProfile)
-    console.log(userProfile)
-  }
-
-
   return (
     <>
-      {user.id}
-      {user.username}
-      <img src={user.avatar}/>
-      <button onClick={startUserProfile}>teste</button>
+      <Search type="text" />
+      <ProfileContainer />
+      <Footer />
     </>
   );
 }
